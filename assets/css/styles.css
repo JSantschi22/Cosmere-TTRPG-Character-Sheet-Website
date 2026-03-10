@@ -65,42 +65,86 @@
 
 #sheet {
     display: flex;
-    flex-direction: column;
-    width: 100vw;
+    margin: 0 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 80px;
+    width: 90vw;
     height: 100vh;
     justify-content: center;
     align-items: center;
 }
 
+/* character info styles */
+.character-info {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 160px;
+    border: 3px solid darkslateblue;
+    margin: 8px;
+    border-radius: 5px;
+}
+
+.character-info > div {
+    width: 50%;
+    height: 50%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.character-name,
+.character-ancestry,
+.character-level,
+.character-paths {
+    border: 1px solid black;
+    background: #EEEEEE;
+    width: 100%;
+    height: 70%;
+}
+
+/* stat block styles */
+#stats-container {
+    display: flex;
+    width: 75%;
+    border: 5px solid darkslateblue;
+    border-radius: 15px;
+    background-color: powderblue;
+    padding: 8px;
+}
+
 /* skill styles */
 #skills-container {
-    display: flex;
-    background-color: lightgrey;
-    border-top: 5px solid darkslategrey;
-    border-bottom: 5px solid darkslategrey;
-    padding: 25px;
-    width: 100%;
-    justify-content: center;
+    background-color: powderblue;
+    border: 5px solid darkslateblue;
+    border-radius: 15px;
+    padding: 8px;
+    width: 75%;
+    height: 300px;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 #skills {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 45px);
+    grid-auto-flow: column;
+    grid-auto-rows: minmax(200px, 1fr);
+    gap: 0 5px;
     list-style: none;
-    gap: 16px 100px;
-    grid-auto-rows: auto;
+    align-content: start;
 }
 
 #skills li {
     display: flex;
     flex-direction: row;
     min-width: 300px;
+    align-items: center;
 }
-
 
 #skills li p {
     margin-left: 10px;
-    align-self: flex-end;
 }
 
 .skill-box {
@@ -160,4 +204,13 @@
 .active {
     background-color: darkblue !important;
     color: white !important;
+}
+
+/* attribute classes */
+[contenteditable="true"] {
+    cursor: text;
+}
+
+[contenteditable="false"] {
+    cursor: default;
 }

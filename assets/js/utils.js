@@ -38,4 +38,15 @@ function loadState() {
     });
 }
 
-export {loadState, saveState};
+/**
+ * Highlights text in a field when clicked
+ */
+function selectText(ev) {
+    const range = document.createRange();
+    range.selectNodeContents(ev.target);
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+}
+
+export {loadState, saveState, selectText};

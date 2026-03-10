@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Cosmere TTRPG Character Sheet</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <script type="module" src="assets/js/main.js"></script>
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <script type="module" src="./assets/js/main.js"></script>
 </head>
 <body>
 <div id="dice-container"></div>
 <div class="header">
-  <img src="assets/images/Cosmere_RPG_Logo.webp" alt="Cosmere TTRPG Logo">
+  <img src="./assets/images/Cosmere_RPG_Logo.webp" alt="Cosmere TTRPG Logo">
   <h1>Character Sheet</h1>
   <div class="header-buttons">
     <button id="edit-button">EDIT</button>
@@ -17,6 +17,32 @@
   </div>
 </div>
 <div id="sheet">
+  <div class="character-info">
+    <div>Character Name <div class="character-name"></div></div>
+    <div>Level<div class="character-level"></div></div>
+    <div>Paths<div class="character-paths"></div></div>
+    <div>Ancestry<div class="character-ancestry"></div></div>
+  </div>
+
+  <div id="stats-container">
+    <div class="stat-box">
+      PHYSICAL
+      <div>
+        STRENGTH<div class="strength-box"></div>
+      </div>
+      <div>
+        DEFENSE<div class="defense-box"></div>
+      </div>
+      <div>
+        SPEED<div class="strength-box"></div>
+      </div>
+      <div class="max-current-box">
+        <div>HEALTH <span>MAXIMUM</span><div class="max-health"></div></div>
+        <div>CURRENT<div class="current-health"></div></div>
+      </div>
+    </div>
+  </div>
+
   <div id="skills-container">
     <ul id="skills">
       <li>

@@ -1,4 +1,4 @@
-import {saveState} from "./utils.js";
+import {saveState, selectText} from "./utils.js";
 
 //Make the skill level buttons fill when clicked, but defaults the buttons to disabled
 let levelBoxes = document.querySelectorAll('.skill-level-box');
@@ -27,17 +27,6 @@ function skillBoxClickableOff() {
     for (const box of levelBoxes) {
         box.disabled = true;
     }
-}
-
-/**
- * Highlights text in a field when clicked
- */
-function selectText(ev) {
-    const range = document.createRange();
-    range.selectNodeContents(ev.target);
-    const selection = window.getSelection();
-    selection.removeAllRanges();
-    selection.addRange(range);
 }
 
 /**
