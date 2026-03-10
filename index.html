@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cosmere TTRPG Character Sheet</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script type="module" src="assets/js/main.js"></script>
+</head>
+<body>
+<div id="dice-container"></div>
+<div class="header">
+  <img src="assets/images/Cosmere_RPG_Logo.webp" alt="Cosmere TTRPG Logo">
+  <h1>Character Sheet</h1>
+  <div class="header-buttons">
+    <button id="edit-button">EDIT</button>
+    <button id="roll-btn">ROLL</button>
+  </div>
+</div>
+<div id="sheet">
+  <div id="skills-container">
+    <ul id="skills">
+      <li>
+        <div class="skill-box"></div>
+        <p>AGILITY (SPD)</p>
+        <div class="skill-level">
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+        </div>
+      </li>
+
+      <li>
+        <div class="skill-box"></div>
+        <p>ATHLETICS (STR)</p>
+        <div class="skill-level">
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+        </div>
+      </li>
+
+      <li>
+        <div class="skill-box"></div>
+        <p>HEAVY WEAPONRY (STR)</p>
+        <div class="skill-level">
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+        </div>
+      </li>
+
+      <li>
+        <div class="skill-box"></div>
+        <p>LIGHT WEAPONRY (SPD)</p>
+        <div class="skill-level">
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+        </div>
+      </li>
+
+      <li>
+        <div class="skill-box"></div>
+        <p>STEALTH (SPD)</p>
+        <div class="skill-level">
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+        </div>
+      </li>
+
+      <li>
+        <div class="skill-box"></div>
+        <p>THIEVERY (SPD)</p>
+        <div class="skill-level">
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+        </div>
+      </li>
+
+      <li>
+        <div class="skill-box"></div>
+        <p>CRAFTING (INT)</p>
+        <div class="skill-level">
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+        </div>
+      </li>
+
+      <li>
+        <div class="skill-box"></div>
+        <p>DEDUCTION (INT)</p>
+        <div class="skill-level">
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+        </div>
+      </li>
+
+      <li>
+        <div class="skill-box"></div>
+        <p>DISCIPLINE (WIL)</p>
+        <div class="skill-level">
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+        </div>
+      </li>
+
+      <li>
+        <div class="skill-box"></div>
+        <p>INTIMIDATION (WIL)</p>
+        <div class="skill-level">
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+        </div>
+      </li>
+
+      <li>
+        <div class="skill-box"></div>
+        <p>LORE (INT)</p>
+        <div class="skill-level">
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+        </div>
+      </li>
+
+      <li>
+        <div class="skill-box"></div>
+        <p>MEDICINE (INT)</p>
+        <div class="skill-level">
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+        </div>
+      </li>
+
+      <li>
+        <div class="skill-box"></div>
+        <p>DECEPTION (PRE)</p>
+        <div class="skill-level">
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+        </div>
+      </li>
+
+      <li>
+        <div class="skill-box"></div>
+        <p>INSIGHT (AWA)</p>
+        <div class="skill-level">
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+        </div>
+      </li>
+
+      <li>
+        <div class="skill-box"></div>
+        <p>LEADERSHIP (PRE)</p>
+        <div class="skill-level">
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+        </div>
+      </li>
+
+      <li>
+        <div class="skill-box"></div>
+        <p>PERCEPTION (AWA)</p>
+        <div class="skill-level">
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+        </div>
+      </li>
+
+      <li>
+        <div class="skill-box"></div>
+        <p>PERCEPTION (AWA)</p>
+        <div class="skill-level">
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+        </div>
+      </li>
+
+      <li>
+        <div class="skill-box"></div>
+        <p>SURVIVAL (AWA)</p>
+        <div class="skill-level">
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+          <button class="skill-level-box"></button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
