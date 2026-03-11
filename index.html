@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Cosmere TTRPG Character Sheet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cinzel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/styles.css">
   <script type="module" src="./assets/js/main.js"></script>
 </head>
@@ -47,6 +48,7 @@
         <div class="max-current-container">
           <div class="max-box">HEALTH <span>MAXIMUM</span><div id="max-health"></div></div>
           <div class="current-box">CURRENT<div id="current-health"></div></div>
+          <div class="deflect-box">DEFLECT<div id="deflect"></div></div>
         </div>
       </div>
 
@@ -311,24 +313,39 @@
   </div>
 
   <div class="sheet-third-row">
-    <div class="lifting-capacity-box">
-      LIFTING CAPACITY
-      <div id="lifting-capacity"></div>
+    <div class="bonus-stats-container">
+      <div class="lifting-capacity-box">
+        LIFTING CAPACITY
+        <div id="lifting-capacity"></div>
+      </div>
+      <div class="movement-box">
+        MOVEMENT
+        <div id="movement"></div>
+      </div>
+      <div class="recovery-die-box">
+        RECOVERY DIE
+        <div id="recovery-die"></div>
+      </div>
+      <div class="senses-range-box">
+        SENSES RANGE
+        <div id="senses-range"></div>
+      </div>
     </div>
-    <div class="movement-box">
-      MOVEMENT
-      <div id="movement"></div>
-    </div>
-    <div class="recovery-die-box">
-      RECOVERY DIE
-      <div id="recovery-die"></div>
-    </div>
-    <div class="senses-range-box">
-      SENSES RANGE
-      <div id="senses-range"></div>
+    <div class="conditions-and-injuries-box">
+      CONDITIONS AND INJURIES
+      <div id="conditions-and-injuries"></div>
     </div>
   </div>
 
 </div>
+
+<!--  popups and menus  -->
+<div id="popup">
+  <button id="popup-close">&#10006;</button>
+  <h2 id="popup-title">TITLE</h2>
+  <p id="popup-content">content</p>
+  <button id="popup-confirm">confirm</button>
+</div>
+
 </body>
 </html>

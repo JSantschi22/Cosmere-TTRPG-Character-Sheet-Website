@@ -9,6 +9,13 @@ const diceBox = new DiceBox({
     scale: 8
 });
 
-await diceBox.init();
+export function roll(notation, callback) {
+    diceBox.onRollComplete = (result) => {
+        console.log(result);
+        callback(result[0]);
+    }
+    diceBox.roll(notation);
+    console.log('we tried');
+}
 
-export {diceBox};
+await diceBox.init();

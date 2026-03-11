@@ -1,7 +1,7 @@
 /**
  * Saves the current state of the page's editable fields
  */
-function saveState() {
+export function saveState() {
     const state = {};
 
     // save filled circles
@@ -21,7 +21,7 @@ function saveState() {
 /**
  * Loads a saved state
  */
-function loadState() {
+export function loadState() {
     const state = JSON.parse(localStorage.getItem('characterState'));
     if (!state) return; // nothing saved yet
 
@@ -41,7 +41,7 @@ function loadState() {
 /**
  * Highlights text in a field when clicked
  */
-function selectText(ev) {
+export function selectText(ev) {
     const range = document.createRange();
     range.selectNodeContents(ev.target);
     const selection = window.getSelection();
@@ -49,4 +49,22 @@ function selectText(ev) {
     selection.addRange(range);
 }
 
-export {loadState, saveState, selectText};
+document.querySelector('#popup-close').addEventListener('click', (ev) => {ev.target.parentElement.classList.remove('visible');});
+/**
+ * Creates a popup on screen
+ * @param title
+ * @param content
+ * @param confirmAction
+ * @param confirmText
+ */
+export function popup(title, content, confirmAction = () => {return true;}, confirmText='confirm') {
+    document.querySelector('#popup').classList.add('visible');
+    document.querySelector('#popup-title').textContent = title;
+    document.querySelector('#popup-content').textContent = content;
+    let confirmBtn = document.querySelector('#popup-confirm');
+    let newConfirmBtn = confirmBtn.cloneNode(true);
+    confirmBtn.parentElement.replaceChild(newConfirmBtn, confirmBtn);
+    newConfirmBtn.textContent = confirmText;
+    newConfirmBtn.addEventListener('click', confirmAction);
+    newConfirmBtn.addEventListener('click', (ev) => {ev.target.parentElement.classList.remove('visible');})
+}

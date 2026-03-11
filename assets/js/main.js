@@ -1,9 +1,5 @@
 import './skills.js';
-import {loadState} from './utils.js'
+import {loadState, popup} from './utils.js'
+import {roll} from "./dice.js";
 
 loadState();
-
-let rollBtn = document.querySelector('#roll-btn');
-rollBtn.addEventListener('click', (ev) => {
-    window.diceBox.roll('1d20');
-})
