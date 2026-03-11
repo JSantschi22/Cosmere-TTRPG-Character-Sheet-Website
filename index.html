@@ -7,7 +7,9 @@
   <script type="module" src="./assets/js/main.js"></script>
 </head>
 <body>
+
 <div id="dice-container"></div>
+
 <div class="header">
   <img src="./assets/images/Cosmere_RPG_Logo.webp" alt="Cosmere TTRPG Logo">
   <h1>Character Sheet</h1>
@@ -16,29 +18,74 @@
     <button id="roll-btn">ROLL</button>
   </div>
 </div>
-<div id="sheet">
-  <div class="character-info">
-    <div>Character Name <div class="character-name"></div></div>
-    <div>Level<div class="character-level"></div></div>
-    <div>Paths<div class="character-paths"></div></div>
-    <div>Ancestry<div class="character-ancestry"></div></div>
-  </div>
 
-  <div id="stats-container">
-    <div class="stat-box">
-      PHYSICAL
-      <div>
-        STRENGTH<div class="strength-box"></div>
+<div id="sheet">
+
+  <div class="sheet-top-row">
+
+    <div class="character-info">
+      <div class="name-box">Character Name <div id="character-name"></div></div>
+      <div class="level-box">Level<div id="character-level"></div></div>
+      <div>Paths<div id="character-paths"></div></div>
+      <div>Ancestry<div id="character-ancestry"></div></div>
+    </div>
+
+    <div id="stats-container">
+      <div class="stat-box">
+        PHYSICAL
+        <div class="stat-mid">
+          <div class="left-stat">
+            STRENGTH<div id="strength-box" class="left-stat-box"></div>
+          </div>
+          <div class="defense-box">
+            DEFENSE<div class="defense-box-shape"><div id="physical-defense" ></div></div>
+          </div>
+          <div class="right-stat">
+            SPEED<div id="speed-box" class="right-stat-box"></div>
+          </div>
+        </div>
+        <div class="max-current-container">
+          <div class="max-box">HEALTH <span>MAXIMUM</span><div id="max-health"></div></div>
+          <div class="current-box">CURRENT<div id="current-health"></div></div>
+        </div>
       </div>
-      <div>
-        DEFENSE<div class="defense-box"></div>
+
+      <div class="stat-box">
+        COGNITIVE
+        <div class="stat-mid">
+          <div class="left-stat">
+            INTELLECT<div id="intellect-box" class="left-stat-box"></div>
+          </div>
+          <div class="defense-box">
+            DEFENSE<div class="defense-box-shape"><div id="cognitive-defense" ></div></div>
+          </div>
+          <div class="right-stat">
+            WILLPOWER<div id="willpower-box" class="right-stat-box"></div>
+          </div>
+        </div>
+        <div class="max-current-container">
+          <div class="max-box">FOCUS <span>MAXIMUM</span><div id="max-focus"></div></div>
+          <div class="current-box">CURRENT<div id="current-focus"></div></div>
+        </div>
       </div>
-      <div>
-        SPEED<div class="strength-box"></div>
-      </div>
-      <div class="max-current-box">
-        <div>HEALTH <span>MAXIMUM</span><div class="max-health"></div></div>
-        <div>CURRENT<div class="current-health"></div></div>
+
+      <div class="stat-box">
+        SPIRITUAL
+        <div class="stat-mid">
+          <div class="left-stat">
+            AWARENESS<div id="awareness-box" class="left-stat-box"></div>
+          </div>
+          <div class="defense-box">
+            DEFENSE<div class="defense-box-shape"><div id="spiritual-defense" ></div></div>
+          </div>
+          <div class="right-stat">
+            PRESENCE<div id="presence-box" class="right-stat-box"></div>
+          </div>
+        </div>
+        <div class="max-current-container">
+          <div class="max-box">INVESTITURE <span>MAXIMUM</span><div id="max-investiture"></div></div>
+          <div class="current-box">CURRENT<div id="current-investiture"></div></div>
+        </div>
       </div>
     </div>
   </div>
@@ -262,6 +309,26 @@
       </li>
     </ul>
   </div>
+
+  <div class="sheet-third-row">
+    <div class="lifting-capacity-box">
+      LIFTING CAPACITY
+      <div id="lifting-capacity"></div>
+    </div>
+    <div class="movement-box">
+      MOVEMENT
+      <div id="movement"></div>
+    </div>
+    <div class="recovery-die-box">
+      RECOVERY DIE
+      <div id="recovery-die"></div>
+    </div>
+    <div class="senses-range-box">
+      SENSES RANGE
+      <div id="senses-range"></div>
+    </div>
+  </div>
+
 </div>
 </body>
 </html>

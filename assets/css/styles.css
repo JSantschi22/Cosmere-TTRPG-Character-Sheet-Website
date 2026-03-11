@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+*::-webkit-scrollbar {
+    display: none;
+}
+
 /* header styles */
 .header {
     position: fixed;
@@ -65,28 +69,32 @@
 
 #sheet {
     display: flex;
-    margin: 0 auto;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     padding-top: 80px;
-    width: 90vw;
+    width: 80vw;
     height: 100vh;
-    justify-content: center;
-    align-items: center;
+}
+
+.sheet-top-row {
+    display: flex;
+    width: 100%;
+    height: 30%;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
 }
 
 /* character info styles */
 .character-info {
     display: flex;
     flex-wrap: wrap;
-    width: 400px;
-    height: 160px;
-    border: 3px solid darkslateblue;
-    margin: 8px;
-    border-radius: 5px;
+    width: 25%;
+    height: 100%;
+    border-top: 5px solid darkslateblue;
+    border-right: 5px solid darkslateblue;
+    background-color: powderblue;
 }
 
-.character-info > div {
+.character-info > div:nth-last-child(-n+2) {
     width: 50%;
     height: 50%;
     padding: 5px;
@@ -94,41 +102,188 @@
     flex-direction: column;
 }
 
-.character-name,
-.character-ancestry,
-.character-level,
-.character-paths {
+#character-ancestry,
+#character-paths,
+#character-name,
+#character-level {
     border: 1px solid black;
     background: #EEEEEE;
     width: 100%;
     height: 70%;
 }
 
+#character-ancestry {
+    border-bottom-right-radius: 5px;
+}
+
+#character-paths {
+    border-bottom-left-radius: 5px;
+}
+
+#character-level {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.name-box, .level-box {
+    height: 50%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.level-box {
+    width: 25%;
+}
+
+.name-box {
+    width: 75%;
+}
+
 /* stat block styles */
 #stats-container {
     display: flex;
     width: 75%;
+    height: 100%;
+    justify-content: space-between;
     border: 5px solid darkslateblue;
-    border-radius: 15px;
+    border-bottom: 0;
     background-color: powderblue;
     padding: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 30%;
+    min-width: 200px;
+    height: 100%;
+    background-color: powderblue;
+}
+
+.stat-mid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3px;
+    padding: 2px 1px 1px 1px;
+    width: 100%;
+    height: 60%;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    font-size: 0.8em;
+}
+
+.left-stat,
+.right-stat {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    align-items: center;
+}
+
+.left-stat-box, .right-stat-box {
+    width: 80%;
+    height: 75%;
+    margin-top: 4px;
+    border: 2px solid #333333;
+    background-color: #EEEEEE;
+}
+
+.left-stat-box {
+    border-bottom-left-radius: 15px;
+}
+
+.right-stat-box {
+    border-bottom-right-radius: 15px;
+}
+
+.defense-box {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items: center;
+}
+
+.defense-box-shape {
+    width: 80%;
+    height: 75%;
+    margin-top: 4px;
+    background-color: #333333;
+    clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 65%, 50% 100%, 0% 65%, 0% 15%);
+}
+
+#physical-defense,
+#cognitive-defense,
+#spiritual-defense {
+    margin: 4px auto;
+    width: 88%;
+    height: 88%;
+    background-color: #EEEEEE;
+    clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 65%, 50% 100%, 0% 65%, 0% 15%);
+}
+
+.max-current-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 30%;
+    padding: 2px;
+}
+
+.max-box, .current-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-wrap: wrap;
+    line-height: 0.8;
+    width: 50%;
+    font-size: 0.7em;
+}
+
+.max-box {
+    border-right: 1px solid black;
+}
+
+.current-box {
+    border-left: 1px solid black;
+}
+
+.max-box > span {
+    font-size: 0.5em;
+    background-color: #EEEEEE;
+    width: 80%;
+    text-align: center;
+}
+
+#max-health,
+#current-health,
+#max-focus,
+#current-focus,
+#max-investiture,
+#current-investiture {
+    background-color: #EEEEEE;
+    width: 80%;
+    height: 80%;
 }
 
 /* skill styles */
 #skills-container {
     background-color: powderblue;
     border: 5px solid darkslateblue;
-    border-radius: 15px;
-    padding: 8px;
-    width: 75%;
-    height: 300px;
+    padding: 8px 12px 8px 12px;
+    width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
 }
 
 #skills {
     display: grid;
-    grid-template-rows: repeat(6, 45px);
+    grid-template-rows: repeat(6, 35px);
     grid-auto-flow: column;
     grid-auto-rows: minmax(200px, 1fr);
     gap: 0 5px;
@@ -177,6 +332,78 @@
 .skill-level-box, .skill-box {
     border: 1px solid #333333;
     background-color: #EEEEEE;
+}
+
+/* third row styles */
+.sheet-third-row {
+    display: flex;
+    justify-content: flex-start;
+    width: 70%;
+    background-color: powderblue;
+    height: 15%;
+    border-bottom: 5px solid darkblue;
+    border-left: 5px solid darkblue;
+    border-right: 5px solid darkblue;
+    font-size: 0.75em;
+    padding: 1px 5px 0 5px
+}
+
+.lifting-capacity-box,
+.movement-box,
+.recovery-die-box,
+.senses-range-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lifting-capacity-box,
+.movement-box {
+    width: 25%
+}
+
+.lifting-capacity-box {
+    margin-left: 3px;
+}
+
+.recovery-die-box {
+    width: 20%;
+    margin-left: 15px;
+}
+
+.senses-range-box {
+    width: 40%;
+    justify-self: flex-end;
+}
+
+#lifting-capacity,
+#movement,
+#recovery-die,
+#senses-range {
+    height: 70%;
+    background-color: #EEEEEE;
+    border: 2px solid black;
+}
+
+#recovery-die,
+#senses-range {
+    width: 80%;
+    border-radius: 8px;
+}
+
+#lifting-capacity,
+#movement {
+    width: 95%;
+}
+
+#lifting-capacity {
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+#movement {
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 /* dice box styles */
