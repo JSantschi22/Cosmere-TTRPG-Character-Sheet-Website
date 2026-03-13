@@ -461,7 +461,7 @@
     width: 75vw;
     height: 75vh;
     pointer-events: none;
-    z-index: 999;
+    z-index: 7;
 }
 
 #dice-container canvas {
@@ -496,6 +496,8 @@
     display: flex;
     flex-direction: column;
     background-color: powderblue;
+    align-content: center;
+    justify-content: center;
     border: 12px solid darkslateblue;
     border-radius: 16px;
     padding: 0;
@@ -505,8 +507,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-90%);
-    width: 300px;
-    height: 170px;
+    width: 350px;
+    height: 200px;
 }
 #popup-close {
     position: absolute;
@@ -533,19 +535,25 @@
 }
 #popup-title {
     position: absolute;
-    top: 5px;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
+    font-family: "Cambria", sans-serif;
+    font-size: 1.75em;
 }
 #popup-content {
     position: absolute;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #EEEEEE;
-    padding: 8px;
-    border-radius: 6px;
-    border: 1px solid black;
+    align-self: center;
+    background-color: transparent;
+    width: 80%;
+    text-align: center;
+    word-wrap: break-word;
+    font-weight: bold;
+    font-family: "Times New Roman", serif;
+    max-height: 100px;
+    max-width: 280px;
+    font-size: clamp(0.5em, 1.1em, 1.1em);
+    overflow-y: auto;
 }
 #popup-confirm {
     position: absolute;
@@ -553,8 +561,8 @@
     left: 50%;
     transform: translateX(-50%);
     width: 150px;
-    height: 20px;
-    background-color: powderblue;
+    height: 25px;
+    background-color: #EEEEEE;
     border: 1px solid black;
     border-radius: 3px;
     box-shadow: 0 0 12px rgb(0,0,0,0.2);

@@ -9,7 +9,7 @@ const diceBox = new DiceBox({
     scale: 8
 });
 
-export function roll(notation, callback) {
+export function roll(notation, callback = diceBox.onRollComplete) {
     diceBox.onRollComplete = (result) => {
         console.log(result);
         callback(result[0]);
