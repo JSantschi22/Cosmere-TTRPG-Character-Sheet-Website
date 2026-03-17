@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-wrap: wrap;
 }
 
 *::-webkit-scrollbar {
@@ -70,18 +71,11 @@
 
 #sheet {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     padding-top: 70px;
     width: 80vw;
-    height: 100vh;
-}
-
-.sheet-top-row {
-    display: flex;
-    width: 100%;
-    height: 30%;
-    justify-content: flex-start;
-    flex-direction: row-reverse;
+    margin: 0 auto;
+    background-color: powderblue;
 }
 
 /* character info styles */
@@ -90,12 +84,8 @@
     grid-template-columns: repeat(4, minmax(50px, auto));
     grid-auto-columns: minmax(200px, 1fr);
     width: 25%;
-    height: 100%;
-    border-top: 5px solid darkslateblue;
-    border-right: 5px solid darkslateblue;
+    height: 120px;
     background-color: powderblue;
-    overflow-y: hidden;
-    overflow-x: auto;
 }
 
 .character-info > div:nth-last-child(-n+2) {
@@ -105,7 +95,6 @@
     display: flex;
     flex-direction: column;
     grid-column: span 2;
-    min-width: 100px;
 }
 
 #character-ancestry,
@@ -155,15 +144,11 @@
 /* stat block styles */
 #stats-container {
     display: flex;
-    width: 75%;
-    height: 100%;
+    height: 200px;
+    width: 100%;
     justify-content: space-between;
-    border: 5px solid darkslateblue;
-    border-bottom: 0;
-    background-color: powderblue;
-    padding: 8px;
-    overflow-x: auto;
-    overflow-y: hidden;
+    padding: 4px;
+    gap: 6%;
 }
 
 .stat-box {
@@ -171,10 +156,10 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: 30%;
-    min-width: 230px;
+    width: 33.3%;
     height: 100%;
-    background-color: powderblue;
+    font-size: clamp(0.5rem, 1rem, 3rem);
+    max-width: 340px;
 }
 
 .stat-mid {
@@ -296,39 +281,36 @@
 
 /* skill styles */
 #skills-container {
-    background-color: powderblue;
-    border: 5px solid darkslateblue;
-    padding: 8px 12px 8px 12px;
     width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
+    height: 240px;
+    padding: 0 5px 0 5px;
 }
 
 #skills {
     display: grid;
-    grid-template-rows: repeat(6, 35px);
+    grid-template-rows: repeat(6, 1fr);
     grid-auto-flow: column;
-    grid-auto-rows: minmax(200px, 1fr);
     gap: 0 5px;
     list-style: none;
-    align-content: start;
+    height: 100%;
 }
 
 #skills li {
     display: flex;
     flex-direction: row;
-    min-width: 300px;
     align-items: center;
 }
 
 #skills li p {
-    margin-left: 10px;
+    padding-left: 5px;
+    text-wrap: nowrap;
+    font-size: clamp(0.5rem, 1rem, 3rem);
 }
 
 .skill-box {
     border-radius: 10%;
-    width: 30px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -342,7 +324,8 @@
     align-items: center;
     margin-left: auto;
     justify-content: space-between;
-    width: auto;
+    width:70px;
+    height: 100%;
     gap: 2px;
 }
 
@@ -358,27 +341,14 @@
 }
 
 /* third row styles */
-.sheet-third-row {
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-    background-color: powderblue;
-    height: 15%;
-    border-bottom: 5px solid darkslateblue;
-    border-left: 5px solid darkslateblue;
-    border-right: 5px solid darkslateblue;
-    font-size: 0.75em;
-    padding: 0 5px 0 5px;
-}
 
 .bonus-stats-container {
     display: flex;
-    justify-content: flex-start;
-    width: 80%;
-    background-color: powderblue;
-    height: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
+    justify-content: space-evenly;
+    width: 75%;
+    height: 120px;
+    padding: 8px;
+    align-content: center;
 }
 
 .lifting-capacity-box,
@@ -389,50 +359,39 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+.lifting-and-movement-box {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .lifting-capacity-box,
 .movement-box {
-    width: 25%;
-    min-width: 130px;
-}
-
-.lifting-capacity-box {
-    margin-left: 3px;
+    width: 150px;
 }
 
 .recovery-die-box {
-    width: 20%;
-    margin-left: 15px;
-    min-width: 100px;
+    width: 120px;
 }
 
 .senses-range-box {
-    width: 40%;
-    min-width: 250px;
-}
-
-.conditions-and-injuries-box {
-    width: 30%;
-    border-left: 5px solid darkslateblue;
-    overflow-x: auto;
-    overflow-y: hidden;
-    min-width: 200px;
+    width: 180px;
 }
 
 #lifting-capacity,
 #movement,
 #recovery-die,
-#senses-range,
-#conditions-and-injuries {
+#senses-range {
     height: 70%;
     background-color: #EEEEEE;
     border: 2px solid black;
 }
 
 #recovery-die,
-#senses-range,
-#conditions-and-injuries {
+#senses-range {
     width: 80%;
     border-radius: 8px;
 }
@@ -564,4 +523,84 @@
 }
 #popup-confirm:active {
     box-shadow: 0 0 0 0;
+}
+
+/* responsive design */
+@media only screen and (min-width: 810px) and (max-width: 1010px) {
+    #sheet {
+        width: 100vw;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 810px) {
+    #sheet {
+        width: 100vw;
+    }
+
+    .bonus-stats-container {
+        flex-wrap: wrap;
+        width: 100%;
+        height: 200px;
+        justify-content: center;
+    }
+
+    .lifting-and-movement-box,
+    .recovery-die-box,
+    .senses-range-box {
+        height: 50%;
+    }
+
+    .character-info {
+        width: 100%;
+    }
+
+    #skills-container {
+        height: 320px;
+    }
+
+    #skills {
+        grid-template-rows: repeat(9, 1fr);
+    }
+}
+
+@media only screen and (max-width: 500px) and (orientation: portrait) {
+    #sheet {
+        width: 100vw;
+        flex-direction: column;
+    }
+
+    #stats-container {
+        flex-direction: column;
+        height: 600px;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .stat-box {
+        width: 100%;
+    }
+
+    .bonus-stats-container {
+        flex-wrap: wrap;
+        width: 100%;
+        height: 200px;
+        justify-content: center;
+    }
+
+    .lifting-and-movement-box,
+    .recovery-die-box,
+    .senses-range-box {
+        height: 50%;
+    }
+
+    .character-info {
+        width: 100%;
+    }
+
+    #skills-container {
+        height: 480px
+    }
+    #skills {
+        grid-template-rows: repeat(18, 1fr);
+    }
 }
